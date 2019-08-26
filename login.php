@@ -14,14 +14,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$count = mysqli_num_rows($res);
 	if ($count > 0) {
 		while ($row = mysqli_fetch_array($res)) {
-			$response["error"] = FALSE;
-			$response["status_code"] = 200;
-			$response['user']['nama'] = $row['nama'];
-			$response['user']['email'] = $row['email'];
-			$response['user']['password'] = $row['password'];
-			$response["message"] = "Login Berhasil";
+
+			if ($row['status']=='1') {
+
+				$response["error"] = FALSE;
+				$response["status_code"] = 200;
+				$response['user']['nama'] = $row['nama'];
+				$response['user']['email'] = $row['email'];
+				$response['user']['password'] = $row['password'];
+				$response["message"] = "Login Berhasil";
+				echo json_encode($response);
+
+			} else {
+
+				$response["error"] = TRUE;
+				$response["status_code"] = 400;
+				$response["message"] = "Akun belum di aktivasi oleh Admin";
+				echo json_encode($response);
+			}
 		}
-		echo json_encode($response);
 	} else {
 		$response["error"] = TRUE;
 		$response["status_code"] = 404;
