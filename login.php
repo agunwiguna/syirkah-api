@@ -4,7 +4,7 @@ require_once('./koneksi/koneksi.php');
 
 $response = array("error" => FALSE);
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	$email = $_POST['email'];
 	$password = $_POST['password'];
