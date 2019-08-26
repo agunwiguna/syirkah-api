@@ -6,7 +6,7 @@ require_once './koneksi/koneksi.php';
   $email = $_POST['email'];
   $password = $_POST['password'];
   $query = "INSERT INTO akun (email, password) VALUES ('$email','$password')";
-  $excQuery = mysqli_query($con, $query); 
+  $excQuery = mysqli_query($koneksi, $query); 
   echo ($excQuery) ? json_encode(array('status_code' =>200, 'message' => 'berhasil menambahkan data '.$nama)) :  json_encode(array('status_code' =>202, 'message' => 'data gagal ditambahkan'));
  }
  else
