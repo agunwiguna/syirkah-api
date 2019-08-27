@@ -20,8 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$response["error"] = FALSE;
 				$response["status_code"] = 200;
 				$response['user']['nama'] = $row['nama'];
+				$response['user']['alamat'] = $row['alamat'];
 				$response['user']['email'] = $row['email'];
+				$response['user']['telpon'] = $row['telpon'];
+				$response['user']['perusahaan'] = $row['perusahaan'];
+				$response['user']['alamat_perusahaan'] = $row['alamat_perusahaan'];
 				$response['user']['password'] = $row['password'];
+				$response['user']['foto'] = $row['foto'];
+				$response['user']['emas'] = $row['emas'];
 				$response["message"] = "Login Berhasil";
 				echo json_encode($response);
 
