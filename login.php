@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 				$response["error"] = FALSE;
 				$response["status_code"] = 200;
+				$response['user']['id_user'] = $row['id_user'];
 				$response['user']['nama'] = $row['nama'];
 				$response['user']['alamat'] = $row['alamat'];
 				$response['user']['email'] = $row['email'];
