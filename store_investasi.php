@@ -4,7 +4,7 @@
 
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-  $id_user = $_POST['id_user'];
+  //$id_user = $_POST['id_user'];
   $nama_investasi = $_POST['nama_investasi'];
   $deskripsi = $_POST['deskripsi'];
   $tgl_mulai = $_POST['tgl_mulai'];
@@ -12,7 +12,7 @@
   $kebutuhan_biaya = $_POST['kebutuhan_biaya'];
   $total_biaya = $_POST['total_biaya'];
 
-  $query = "INSERT INTO investasi (id_user, nama_investasi,deskripsi,tgl_mulai,tgl_selesai,kebutuhan_biaya,total_biaya) VALUES ('$id_user','$nama_investasi','$deskripsi','$tgl_mulai','$tgl_selesai','$kebutuhan_biaya','$total_biaya')";
+  $query = "INSERT INTO investasi ( nama_investasi,deskripsi,tgl_mulai,tgl_selesai,kebutuhan_biaya,total_biaya) VALUES ('$nama_investasi','$deskripsi','$tgl_mulai','$tgl_selesai','$kebutuhan_biaya','$total_biaya')";
 
   $excQuery = mysqli_query($koneksi, $query); 
   
