@@ -18,8 +18,8 @@ if($_SERVER['REQUEST_METHOD']=='GET') {
   			'telpon'=>$row[4],
   			'perusahaan'=>$row[5],
   			'alamat_perusahaan'=>$row[6],
-  			'password'=>$row[7]
-  			'foto'=>$row[8]
+  			'password'=>$row[7],
+  			'foto'=>$row[8],
   			'emas'=>$row[9])
   	);
   	}
