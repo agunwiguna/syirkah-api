@@ -1,8 +1,8 @@
 <?php 
 
 //hosting
-//$koneksi = mysqli_connect('localhost','solutiondipointe_syirkah','9smRJXXsc_9I','solutiondipointe_syirkah');
+$koneksi = mysqli_connect('localhost','solutiondipointe_syirkah','9smRJXXsc_9I','solutiondipointe_syirkah');
 
 //lokal
-$koneksi = mysqli_connect('localhost','root','','syirkah');
+//$koneksi = mysqli_connect('localhost','root','','syirkah');
 ?>
