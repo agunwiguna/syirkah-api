@@ -19,7 +19,7 @@
   if ($excQuery) {
   	echo json_encode(array('status_code' =>200, 'message' => 'Berhasil menambahkan data'));
   } else {
-  	echo json_encode(array('status_code' =>202, 'message' => 'Data gagal ditambahkan'));;
+  	echo json_encode(array('status_code' =>202, 'message' => 'Data gagal ditambahkan'));
   }
 
  }else{
