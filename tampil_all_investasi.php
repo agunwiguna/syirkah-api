@@ -18,15 +18,16 @@ if($_SERVER['REQUEST_METHOD']=='GET') {
         'tgl_selesai'=>$row[5],
         'kebutuhan_biaya'=>$row[6],
         'total_biaya'=>$row[7],
-        'id_user'=>$row[8],
-        'nama'=>$row[9],
-        'alamat'=>$row[10],
-        'email'=>$row[11],
-        'telpon'=>$row[12],
-        'perusahaan'=>$row[13],
-        'alamat_perusahaan'=>$row[14],
-        'password'=>$row[15],
-        'foto'=>$row[16])
+        'sisa'=>$row[8],
+        'id_user'=>$row[9],
+        'nama'=>$row[10],
+        'alamat'=>$row[11],
+        'email'=>$row[12],
+        'telpon'=>$row[13],
+        'perusahaan'=>$row[14],
+        'alamat_perusahaan'=>$row[15],
+        'password'=>$row[16],
+        'foto'=>$row[17])
   	  );
   	}
   	echo json_encode(array("status_code"=>200,"result_all_investasi"=>$result_all_investasi));
