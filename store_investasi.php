@@ -11,8 +11,9 @@
   $tgl_selesai = $_POST['tgl_selesai'];
   $kebutuhan_biaya = $_POST['kebutuhan_biaya'];
   $total_biaya = $_POST['total_biaya'];
+  $sisa = $_POST['kebutuhan_biaya'];
 
-  $query = "INSERT INTO investasi (id_user, nama_investasi,deskripsi,tgl_mulai,tgl_selesai,kebutuhan_biaya,total_biaya) VALUES ('$id_user','$nama_investasi','$deskripsi','$tgl_mulai','$tgl_selesai','$kebutuhan_biaya','$total_biaya')";
+  $query = "INSERT INTO investasi (id_user, nama_investasi,deskripsi,tgl_mulai,tgl_selesai,kebutuhan_biaya,total_biaya,sisa) VALUES ('$id_user','$nama_investasi','$deskripsi','$tgl_mulai','$tgl_selesai','$kebutuhan_biaya','$total_biaya','$sisa')";
 
   $excQuery = mysqli_query($koneksi, $query); 
   
