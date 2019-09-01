@@ -27,11 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$response["message"] = "e-mail sudah terdaftar " . $email;
 		echo json_encode($response);
 	} else {
-		$foto=htmlspecialchars($_FILES['foto']['name']);
-		$file_path = $upload_path . $foto; //file path to upload in the server
-		move_uploaded_file($_FILES["foto"]["tmp_name"], $file_path);
+		// $foto=htmlspecialchars($_FILES['foto']['name']);
+		// $file_path = $upload_path . $foto; //file path to upload in the server
+		// move_uploaded_file($_FILES["foto"]["tmp_name"], $file_path);
 
-		$sql = "INSERT INTO users (nama, alamat, email, telpon, perusahaan, alamat_perusahaan, password, foto) VALUES('$nama', '$alamat', '$email', '$telpon', '$perusahaan', '$alamat_perusahaan', '$password', '$foto')";
+		$foto = htmlspecialchars($_POST['foto']);
+
+		$foto = str_replace('data:image/png;base64,', '', $foto);
+		$foto = str_replace(' ', '+', $foto);
+
+		$data = base64_decode($foto);
+		$file = uniqid() . '.png';
+
+		file_put_contents($file, $data);
+
+		$sql = "INSERT INTO users (nama, alamat, email, telpon, perusahaan, alamat_perusahaan, password, foto) VALUES('$nama', '$alamat', '$email', '$telpon', '$perusahaan', '$alamat_perusahaan', '$password', '$file')";
 		$res = mysqli_query($koneksi, $sql);
 
 		echo ($res) ? json_encode(array('status_code' => 200, 'message' => 'berhasil menambahkan data ' . $nama)) : json_encode(array('status_code' => 202, 'message' => 'data gagal ditambahkan'));
