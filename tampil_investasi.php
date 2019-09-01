@@ -4,8 +4,7 @@ require_once('./koneksi/koneksi.php');
 if($_SERVER['REQUEST_METHOD']=='GET') {
   
   $id_user = $_GET['id_user'];
-  
-  $sql = "SELECT * FROM investasi WHERE id_user='$id_user'";
+  $sql = "SELECT * FROM investasi a JOIN users b ON a.id_user=b.id_user WHERE a.id_user='$id_user' ORDER BY id_investasi DESC";
   $res = mysqli_query($koneksi,$sql);
   $result = array();
   while($row = mysqli_fetch_array($res)){
@@ -17,7 +16,17 @@ if($_SERVER['REQUEST_METHOD']=='GET') {
       'tgl_mulai'=>$row[4],
       'tgl_selesai'=>$row[5],
       'kebutuhan_biaya'=>$row[6],
-      'total_biaya'=>$row[7])
+      'total_biaya'=>$row[7],
+      'sisa'=>$row[8],
+      'id_user'=>$row[9],
+      'nama'=>$row[10],
+      'alamat'=>$row[11],
+      'email'=>$row[12],
+      'telpon'=>$row[13],
+      'perusahaan'=>$row[14],
+      'alamat_perusahaan'=>$row[15],
+      'password'=>$row[16],
+      'foto'=>$row[17])
   );
   }
   echo json_encode(array("status_code"=>200,"result"=>$result));

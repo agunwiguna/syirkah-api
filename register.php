@@ -27,9 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$response["message"] = "e-mail sudah terdaftar " . $email;
 		echo json_encode($response);
 	} else {
-		// $foto=htmlspecialchars($_FILES['foto']['name']);
-		// $file_path = $upload_path . $foto; //file path to upload in the server
-		// move_uploaded_file($_FILES["foto"]["tmp_name"], $file_path);
 
 		$foto = htmlspecialchars($_POST['foto']);
 
@@ -39,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$data = base64_decode($foto);
 		$file = uniqid() . '.png';
 
-		file_put_contents($file, $data);
+		file_put_contents('img/'.$file, $data);
 
 		$sql = "INSERT INTO users (nama, alamat, email, telpon, perusahaan, alamat_perusahaan, password, foto) VALUES('$nama', '$alamat', '$email', '$telpon', '$perusahaan', '$alamat_perusahaan', '$password', '$file')";
 		$res = mysqli_query($koneksi, $sql);
