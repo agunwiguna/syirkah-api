@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD']=='GET') {
   	echo json_encode(array("status_code"=>200,"result_all_investasi"=>$result_all_investasi));
   	mysqli_close($koneksi);
   } else {
-  	echo json_encode(array('status_code' =>404, 'message' => 'Upps.. data masih kosong'));
+  	echo json_encode(array('status_code' =>404, 'message' => 'Upps.. data investasi masih kosong'));
   }
 }
 

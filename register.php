@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$sql = "INSERT INTO users (nama, alamat, email, telpon, perusahaan, alamat_perusahaan, password, foto) VALUES('$nama', '$alamat', '$email', '$telpon', '$perusahaan', '$alamat_perusahaan', '$password', '$file')";
 		$res = mysqli_query($koneksi, $sql);
 
-		echo ($res) ? json_encode(array('status_code' => 200, 'message' => 'berhasil menambahkan data ' . $nama)) : json_encode(array('status_code' => 202, 'message' => 'data gagal ditambahkan'));
+		echo ($res) ? json_encode(array('status_code' => 200, 'message' => 'Registrasi Berhasil..')) : json_encode(array('status_code' => 202, 'message' => 'Data gagal ditambahkan'));
 	}
 } else {
 
