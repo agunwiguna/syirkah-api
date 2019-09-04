@@ -20,7 +20,8 @@ if($_SERVER['REQUEST_METHOD']=='GET') {
   			'alamat_perusahaan'=>$row[6],
   			'password'=>$row[7],
   			'foto'=>$row[8],
-  			'emas'=>$row[9])
+  			'emas'=>$row[9],
+        'perak'=>$row[10])
   	);
   	}
   	echo json_encode(array("status_code"=>200,"result_member"=>$result_member));

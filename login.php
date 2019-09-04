@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$response['user']['password'] = $row['password'];
 				$response['user']['foto'] = $row['foto'];
 				$response['user']['emas'] = $row['emas'];
+				$response['user']['perak'] = $row['perak'];
 				$response["message"] = "Login Berhasil";
 				echo json_encode($response);
 
