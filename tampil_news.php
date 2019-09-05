@@ -3,7 +3,7 @@ require_once('./koneksi/koneksi.php');
 
 if($_SERVER['REQUEST_METHOD']=='GET') {
 
-  $sql = "SELECT * FROM news";
+  $sql = "SELECT * FROM news ORDER BY id DESC";
   
   $res = mysqli_query($koneksi,$sql);
   $count = mysqli_num_rows($res);
