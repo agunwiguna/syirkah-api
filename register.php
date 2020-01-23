@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$perusahaan = $_POST['perusahaan'];
 	$alamat_perusahaan = $_POST['alamat_perusahaan'];
 	$password = $_POST['password'];
+	$created_at = date("Y-m-d");
 	//$foto = $_POST['foto'];
 	//$status = $_POST['status'];
 
@@ -38,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 		file_put_contents('img/'.$file, $data);
 
-		$sql = "INSERT INTO users (nama, alamat, email, telpon, perusahaan, alamat_perusahaan, password, foto) VALUES('$nama', '$alamat', '$email', '$telpon', '$perusahaan', '$alamat_perusahaan', '$password', '$file')";
+		$sql = "INSERT INTO users (nama, alamat, email, telpon, perusahaan, alamat_perusahaan, password, foto,created_at) VALUES('$nama', '$alamat', '$email', '$telpon', '$perusahaan', '$alamat_perusahaan', '$password', '$file','$created_at')";
 		$res = mysqli_query($koneksi, $sql);
 
 		echo ($res) ? json_encode(array('status_code' => 200, 'message' => 'Registrasi Berhasil..')) : json_encode(array('status_code' => 202, 'message' => 'Data gagal ditambahkan'));

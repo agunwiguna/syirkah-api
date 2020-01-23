@@ -4,7 +4,7 @@ require_once('./koneksi/koneksi.php');
 
 if($_SERVER['REQUEST_METHOD']=='GET') {
   
-  $sql = "SELECT * FROM users WHERE status='1' AND level='user'";
+  $sql = "SELECT * FROM users WHERE status='1' AND level='user' ORDER BY nama ASC";
   $res = mysqli_query($koneksi,$sql);
   $count = mysqli_num_rows($res);
   $result_member = array();

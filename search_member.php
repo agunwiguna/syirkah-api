@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 
   $search = $_POST['search'];
 
-  $sql = "SELECT * FROM users WHERE nama LIKE '%$search%'";
+  $sql = "SELECT * FROM users WHERE nama LIKE '%$search%' WHERE level='user'";
   $res = mysqli_query($koneksi,$sql);
   $count = mysqli_num_rows($res);
   $result_member = array();
